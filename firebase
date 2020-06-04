@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAvMs3orPqclDtUUMEl7GwYDvuZ6DMajUQ",
+    authDomain: "darkclothing-db.firebaseapp.com",
+    databaseURL: "https://darkclothing-db.firebaseio.com",
+    projectId: "darkclothing-db",
+    storageBucket: "darkclothing-db.appspot.com",
+    messagingSenderId: "316870922182",
+    appId: "1:316870922182:web:0683a02c89a0776882acc7",
+    measurementId: "G-H9Q493G87Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
