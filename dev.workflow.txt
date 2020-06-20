@@ -1,0 +1,73 @@
+How we implement redux in the Context of Shopping Cart.
+=========================================================
+
+* Cart Component
+
+    - Bring in the SVG(image) for the Shopping Icon
+        - in the src/assets folder in our specific application
+
+    - Create the Cart Icon Component that represent both the SVG image and also the number in the middle of the Icon
+        -create the cart-icon folder that will hold the cart-icon Component in the components folder
+        -create the cart-icon functional component along with its style sheet file
+
+    - Import (or Bring in) the Cart Icon Component inside the Header Component
+
+* Cart Dropdown Component
+
+    The Cart Dropdown is a container 
+    Container contains :  
+        - a section that contains a list of Item (that is scrollable)
+        - a "GO TO CHECKOUT" button 
+
+    1- Create a Cart-Dropdown component
+
+        - cart-dropdown folder inside the src/components folder 
+        - cart-dropdown.styles.scss component style file
+        - cart-dropdown.component.jsx component file
+            * Import the Custom button (that will be needed for the "GO TO CHECKOUT" button)
+            * Import the cart-dropdown style sheet
+            * Create a stateless functional CartDropdown component
+            * Export default CartDropdown component
+        - Bring in the style sheet content from the styles provided for download.
+    
+    2 - Bring the Cart-Dropdown component in the Header component
+
+        Place it outside of the "option" div section.
+
+    3 - Conditionally show or hide the Card dropdown based on "hidden" value (true of false)
+        - Will use a reducer to do that
+
+* Implement Redux in Cart.
+
+    - Create cart folder inside redux folder (the cart folder will contain every thing related to cart state management using redux)
+    - create empty cart.action.js file (represent the action creator)
+    - create empty cart.reducer.js (represent the cart reducer)
+    - create empty cart.types.js (will contain constants representing actions types)
+
+    start
+        * start with cart reducer
+            -create a initial state 
+            -create the cart reducer function
+        * create a constant that designate the action type
+        * create the action creator (who returns a type - here we don't need a payload)
+        * bind the action to the cart-icon component
+            - import in { connect } from redux (HOC)
+            - import in a cart action
+            - create the dispatcher (mapDispatchToProps) function to dispatch the action to all reducers
+            - use the { connect } HOC to mutate the the CartIcon component by passing in the dispatcher
+            - pass the action creator as to CartIcon function component as props
+            - pass the action creator function down to the onclick event of the element that needs it (here the div representing the cart icon)
+        * add the cart reducer to the root reducer
+        * show or hide the dropdown based on the value of "hidden" value
+            - go to the Header component
+            - using the already existing mapStateToProps we destructure the state to use the hidden property
+            - selectively render the CartDropdown base on the 'hidden' value
+
+
+
+    
+
+
+
+
+
