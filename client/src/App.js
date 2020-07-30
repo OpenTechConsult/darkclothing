@@ -41,13 +41,14 @@ const App = ({ checkUserSession, currentUser } ) =>  {
                             <Route exact path='/' component={HomePage} />
                             <Route path='/shop' component={ShopPage} />
                             <Route exact path='/checkout' component={CheckoutPage} />
+                        </Suspense>
                             <Route exact 
                                     ath='/signin'  
                                     render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUp />)} />
                             <Route exact path='/profile' 
                                     render= {() => 
                                         (<Profile name='Yihua' email='yihuazhang@gmail.com' />)} />
-                        </Suspense>
+                        
                     </ErrorBoundary>
                 </Switch>
             </div>
