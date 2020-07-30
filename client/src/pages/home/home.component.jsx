@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Profiler } from 'react'
 import Directory from '../../components/directory/directory.component'
 import { HomeContainer } from './home.styles';
 //import './home.styles.scss'
@@ -6,7 +6,11 @@ import { HomeContainer } from './home.styles';
 const Home = ({ history }) => {
     return (
         <HomeContainer>
-            <Directory />
+            <Profiler id='Directory' onRender={(id, phase, actualDuration) => {
+                console.log({id, phase, actualDuration});
+            }}>
+                <Directory />
+            </Profiler>
         </HomeContainer>
     )
 }
